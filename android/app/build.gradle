@@ -1,6 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
-
+apply plugin: "com.google.gms.google-services"
+ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"  
 import com.android.build.OutputFile
 
 /**
@@ -151,9 +152,14 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+   implementation "com.facebook.react:react-native:0.66.2"
+ implementation('com.facebook.android:facebook-android-sdk:11.2.1')  
+  implementation platform('com.google.firebase:firebase-bom:31.5.0')
+   implementation "com.facebook.android:facebook-login:[5,6)"
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
-
+ implementation 'com.google.firebase:firebase-auth'
+    implementation('com.google.firebase:firebase-analytics')
+    implementation('com.google.android.gms:play-services-auth:20.5.0')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'
